@@ -14,7 +14,7 @@ git push origin master
 git remote add upstream git@github.com:lewagon/dotfiles.git
 
 GITHUB_NICKNAME=$(git remote get-url --push origin | cut -d ":" -f 2 | cut -d "/" -f 1)
-GITHUB_EMAIL=$(curl -s https://api.github.com/repos/${GITHUB_NICKNAME}/dotfiles/commits/`git rev-parse HEAD` | jq -r '.commit.author.email')
+GITHUB_EMAIL=$(curl -s https://api.github.com/repos/zacharygian/dotfiles/commits/`git rev-parse HEAD` | jq -r '.commit.author.email')
 GIT_EMAIL=$(git config --global user.email)
 
 if [ "${GITHUB_EMAIL}" = "${GIT_EMAIL}" ] || [ -z ${GITHUB_EMAIL} ]
